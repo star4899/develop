@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+*{padding:0; margin:0; font-family:'돋움',Dotum; font-size:16px;}
+#wrap{width:300px; margin:0 auto; text-align:center;}
+h1{padding:20px; font-size:20px;}
+#game{width:300px; height:300px; margin:0 auto 50px;}
+#game span{display:block; float:left; position:relative; width:30px; height:30px; border:1px solid #ddd; box-sizing:border-box; color:#000; line-height:30px; transition:background-color .3s, border-color .6s;}
+#game span:hover{border-color:#000;}
+#game span.fail{background-color:red;}
+#game span[data-number]::before{position:absolute; left:0; top:0; z-index:10; width:100%; height:100%; font-weight:bold; color:red; content:attr(data-number);}
+#game span[data-number="0"]::before{font-weight:normal; color:gray;}
+#game span[data-number="1"]::before{color:blue;}
+#game span[data-number="2"]::before{color:green;}
+#game span[data-number="*"]::before{background:url(../images/mine.png) center center/70% no-repeat; content:"";}
+#game span::after{position:absolute; left:0; top:0; z-index:20; width:100%; height:100%; background-color:#eee; transition:opacity .3s; content:"";}
+#game span:hover::after{background-color:#ddd;}
+#game span.fail::after, #game span.open::after{opacity:0;}
+#game span.choice::after{opacity:1; background:#eee url(../images/flag.png) center center/50% no-repeat;}
+#game.complete span.choice::after{opacity:1; background-color:red;}
+#game span.tempChoice::after, #game.tempChoice span.choice::after{opacity:1; content:"?";}
+#game.complete span::after{opacity:0;}
+#btn_area button{padding:10px 20px;}

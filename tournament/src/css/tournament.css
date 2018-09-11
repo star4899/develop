@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+body,section,main,div,ol,ul,li,h1,h2{padding:0; margin:0;}
+body{font-family:'돋움',Dotum; text-align:center;}
+h1{line-height:50px;}
+h2{font-size:14px; line-height:40px;}
+ol,ul{overflow:hidden; display:flex; justify-content:center; list-style:none;}
+ol{flex-direction:column;}
+ul li{flex:none; width:56px; margin:0 10px;}
+a, .complete ul li{overflow:hidden; display:block; width:56px; height:56px; background-color:#ccc; text-indent:-10000em;}
+#content{margin-bottom:30px;}
+.complete ol > li{padding:5px;}
+.complete ol > li::before{display:block; margin-bottom:5px; content:attr(data-vs);}
+button{padding:10px; border:0;}
+.model{background-position:center center; background-repeat:no-repeat;}
+.model-0{background-image:url(../images/model-0.jpg);}
+.model-1{background-image:url(../images/model-1.jpg);}
+.model-2{background-image:url(../images/model-2.jpg);}
+.model-3{background-image:url(../images/model-3.jpg);}
+.model-4{background-image:url(../images/model-4.jpg);}
+.model-5{background-image:url(../images/model-5.jpg);}
+.model-6{background-image:url(../images/model-6.jpg);}
+.model-7{background-image:url(../images/model-7.jpg);}
+.model-8{background-image:url(../images/model-8.jpg);}
+.model-9{background-image:url(../images/model-9.jpg);}
+.model-10{background-image:url(../images/model-10.jpg);}
+.model-11{background-image:url(../images/model-11.jpg);}
+.model-12{background-image:url(../images/model-12.jpg);}
+.model-13{background-image:url(../images/model-13.jpg);}
+.model-14{background-image:url(../images/model-14.jpg);}
+.model-15{background-image:url(../images/model-15.jpg);}
+.model-16{background-image:url(../images/model-16.jpg);}
+.model-17{background-image:url(../images/model-17.jpg);}
+.model-18{background-image:url(../images/model-18.jpg);}
+.model-19{background-image:url(../images/model-19.jpg);}
+.model-20{background-image:url(../images/model-20.jpg);}
+.model-21{background-image:url(../images/model-21.jpg);}
+.model-22{background-image:url(../images/model-22.jpg);}
+.model-23{background-image:url(../images/model-23.jpg);}
+.model-24{background-image:url(../images/model-24.jpg);}
+.model-25{background-image:url(../images/model-25.jpg);}
+.model-26{background-image:url(../images/model-26.jpg);}
+.model-27{background-image:url(../images/model-27.jpg);}
+.model-28{background-image:url(../images/model-28.jpg);}
+.model-29{background-image:url(../images/model-29.jpg);}
+.model-30{background-image:url(../images/model-30.jpg);}
+.model-31{background-image:url(../images/model-31.jpg);}
