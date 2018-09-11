@@ -2,9 +2,9 @@
 
 재미로 만든 라이브러리
 
-API
+## API
 
-## select
+- select
 skydown Library 객체 생성
 ```js
 var $elm = $sky(selector);
