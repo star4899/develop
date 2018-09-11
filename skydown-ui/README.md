@@ -4,7 +4,7 @@
 
 ## API
 
-- select
+select
 skydown Library 객체 생성
 ```js
 var $elm = $sky(selector);
