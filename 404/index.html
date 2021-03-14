@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi" />
+<meta name="format-detection" content="telephone=no, email=no, address=no">
+<meta name="theme-color" content="#000000">
+<meta name="apple-mobile-web-app-status-bar-style" content="#000000">
+<title>Page Not Found</title>
+<style>
+*{padding:0; margin:0;}
+html, body{height:100%;}
+body{background-color:#000;}
+main{display:block; position:relative; height:100vh; outline:1px solid #fff; outline-offset:-20px;}
+main *::selection{background-color:red; color:#fff;}
+section{position:absolute; left:0; top:50%; width:100%; font-size:30px; text-align:center; color:#fff; transform:translate(0,-50%);}
+section h1{line-height:150%;}
+section span{color:#03a9f4;}
+#fingertip{display:none; position:absolute; left:0; top:0; width:10px; height:10px; background-color:#fff; border-radius:50%; opacity:0;}
+#fingertip::after{display:none; position:absolute; left:0; top:0; width:100%; height:100%; border:1px solid #fff; border-radius:50%; box-sizing:border-box; opacity:0; content:"";}
+#fingertip.on{display:block; animation:fingertip .5s ease-in-out;}
+#fingertip.on::after{display:block; animation:fingertip .5s ease-in-out;}
+@keyframes fingertip{
+	0%{
+		transform:scale(1);
+		opacity:1;
+	}
+	100%{
+		transform:scale(3);
+		opacity:0;
+	}
+}
+</style>
+</head>
+
+<body>
+	<main>
+		<section>
+			<h1><span>Page Not Found</span><br>페이지를 찾을 수 없습니다</h1>
+		</section>
+		<div id="fingertip"></div>
+	</main>
+<script>
+;(function(w){
+	var $main = document.querySelector("main"), $fingertip = document.querySelector("#fingertip");
+	var sX, sY, eX, eY;
+	var HandleStart = function(e){
+		$fingertip.className = "";
+	};
+	var HandleEnd = function(e){
+		if(e.type == "touchend"){
+			sX = e.changedTouches[0].pageX, sY = e.changedTouches[0].pageY;
+		}else{
+			sX = e.pageX, sY = e.pageY;
+		};
+		$fingertip.style.left = (sX - 5) + "px";
+		$fingertip.style.top = (sY - 5) + "px";
+		$fingertip.className = "on";
+		window.navigator.vibrate && window.navigator.vibrate(200);
+	};
+	if("ontouchstart" in window){
+		$main.addEventListener("touchstart", HandleStart, false);
+		$main.addEventListener("touchend", HandleEnd, false);
+	}else{
+		$main.addEventListener("mousedown",HandleStart);
+		$main.addEventListener("mouseup",HandleEnd);
+	};
+})(window);
+</script>
+</body>
+</html>
